@@ -1,0 +1,26 @@
+@startuml
+class Votante {
+    +nombre: String
+    +emitirVoto(candidato: Candidato): Voto
+}
+
+class Candidato {
+    +nombre: String
+}
+
+class Voto {
+    +id: String
+    +candidato: Candidato
+}
+
+class Urna {
+    +id: String
+    +votos: List<Voto>
+    +agregarVoto(voto: Voto): void
+    +contarVotos(): Map<Candidato, Integer>
+}
+
+class Resultado {
+    +candidato: Candidato
+    +totalVotos: Integer
+}
